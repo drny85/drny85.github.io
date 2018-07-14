@@ -10,57 +10,6 @@
 </head>
 <body>
   <app-root></app-root>
-  <h2> Hello </h2>
-  <div class="container">
-  <div *ngIf="referral" class="card animated bounceInLeft" style="width: 100%;">
-
-  <div class="card-body">
-    <div class="row">
-      <div class="col-8">
-        <h2 class="card-title">{{ referral.name }} {{ referral.lastName }}</h2>
-      </div>
-      <div class="col">
-          <div class="btn-group" role="group" aria-label="Basic example">
-              <button routerLink="/edit/{{ referral.id }}" type="button" class="btn btn-secondary fa fa-pencil"> Edit</button>
-              <button type="button" class="btn btn-danger fa fa-trash" (click)="onDelete()"> Delete</button>
-              
-            </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col 4">
-        <ul class="list-group">
-            <li [hidden]="!referral.mon" class="list-group-item text-left"><span class="font-weight-bold"> MON:</span>  {{ referral.mon }}</li>
-            <li [hidden]="!referral.orderDate" class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-calendar-check-o"></i> Order Date:</span>  {{ referral.orderDate | date:"longDate" }}</li>
-            <li [hidden]="!referral.due" class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-calendar"></i> Due Date:</span>  {{ referral.due | date:"longDate" }}</li>
-            <li [hidden]="!referral.package" class="list-group-item text-left"><span class="font-weight-bold"> Package:</span>  {{ referral.package }}</li>
-            <li class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-home"></i> Address:</span>  {{ referral.address.street }}</li>
-            <li class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-building"></i> Apartment:</span>  {{ referral.address.apt }}</li>
-            <li class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-info"></i> City:</span>  {{ referral.address.city }}</li>
-            <li class="list-group-item text-left"><span class="font-weight-bold"> Zip code:</span>  {{ referral.address.zipcode }}</li>
-            <li class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-phone"></i>  Phone:</span>  {{ referral.phone }}</li>
-            <li class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-envelope"></i> Email:</span> <a href="mailto:{{referral.email}}"> {{ referral.email}}</a> </li>
-          
-          <li class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-suitcase"></i> Move In:</span>  {{ referral.moveIn | date:"longDate" }}</li>
-          <li [hidden]="!referral.referredBy" class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-user"></i> Referred By:</span>  {{ referral.referredBy }}</li>
-          <li class="list-group-item text-left"><span class="font-weight-bold"><i class="fa fa-hourglass-start"></i> Status:</span>  {{ referral.status | uppercase }}</li>
-
-        </ul>
-    </div>
-    <div class="col 4">
-        <div class="card">
-          <h4 class="text-center card-header">Notes or Comments</h4>
-          <div class="card-body">
-            <blockquote class="font-italic">{{ referral.note }}</blockquote>
-          </div>
-        </div>
-    </div>
-  </div>
-
-
-  </div>
-</div>
-</div>
 </body>
 </html>
 
